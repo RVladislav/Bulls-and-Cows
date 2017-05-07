@@ -1,8 +1,0 @@
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\bin\Release\Bulls-and-Cows.exe.config
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\bin\Release\Bulls-and-Cows.exe
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\bin\Release\Bulls-and-Cows.pdb
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Release\Bulls_and_Cows.frmMain.resources
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Release\Bulls_and_Cows.Properties.Resources.resources
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Release\Bulls-and-Cows.csproj.GenerateResource.Cache
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Release\Bulls-and-Cows.exe
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Release\Bulls-and-Cows.pdb

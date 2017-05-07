@@ -11,6 +11,8 @@ $RECYCLE.BIN/
 #Directories
 bin
 obj
+.vs
+vs
 
 # Windows Installer files
 *.cab
