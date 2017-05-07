@@ -10,7 +10,7 @@ $RECYCLE.BIN/
 
 #Directories
 bin
-.vs
+obj
 
 # Windows Installer files
 *.cab
@@ -49,3 +49,4 @@ bin
 Network Trash Folder
 Temporary Items
 .apdisk
+*.suo
