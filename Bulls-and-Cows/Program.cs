@@ -16,7 +16,7 @@ namespace Bulls_and_Cows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new Main());
         }
     }
 }

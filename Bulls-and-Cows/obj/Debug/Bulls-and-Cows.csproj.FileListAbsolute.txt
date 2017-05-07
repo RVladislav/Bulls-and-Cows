@@ -6,4 +6,4 @@ E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\bin\Debug\Bulls-and-Cows.e
 E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\bin\Debug\Bulls-and-Cows.pdb
 E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Debug\Bulls-and-Cows.exe
 E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Debug\Bulls-and-Cows.pdb
-E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Debug\Bulls_and_Cows.frmMain.resources
+E:\Work\VS2017\Projects\Bulls-and-Cows\Bulls-and-Cows\obj\Debug\Bulls_and_Cows.Main.resources

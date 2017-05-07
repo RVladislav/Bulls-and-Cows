@@ -1,6 +1,6 @@
 ﻿namespace Bulls_and_Cows
 {
-    partial class frmMain
+    partial class Main
     {
         /// <summary>
         /// Обязательная переменная конструктора.

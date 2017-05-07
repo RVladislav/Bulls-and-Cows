@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Bulls_and_Cows
 {
-    public partial class frmMain : Form
+    public partial class Main : Form
     {
         int[] answer, question;
         int attempt = 15;
 
-        public frmMain()
+        public Main()
         {
             InitializeComponent();
 
@@ -64,13 +64,30 @@ namespace Bulls_and_Cows
             }
         }
 
+        private int ShowQuestion()
+        {
+            string q = "";
+
+            for (int i = 0; i <= 3; i++)
+            {
+                q += question[i].ToString();
+            }
+
+            return int.Parse(q);
+        }
+
         private void Save(string s)
         {
+
             for (int i = 0; i <= 3; i++)
             {
                 question[i] = int.Parse(s[i].ToString());
             }
+
+
+
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -134,10 +151,10 @@ namespace Bulls_and_Cows
                     }
                     else
                     {
-                        txtTry.Text += attempt.ToString() + "  Быков: " + bulls.ToString() + " Коров: " + cows.ToString() + "\n";
+                        txtTry.Text += attempt.ToString() + " |" + " " + ShowQuestion() + " " + "  Быков: " + bulls.ToString() + " Коров: " + cows.ToString() + "\n";
 
                         attempt--;
-                    }                    
+                    }
 
                     txtCheck.Clear();
                 }
@@ -151,25 +168,28 @@ namespace Bulls_and_Cows
             {
                 btnCheck_Click(sender, e);
             }
+            else
+            {
+
+            }
+
         }
 
         private void txtCheck_TextChanged(object sender, EventArgs e)
         {
             string check = txtCheck.Text;
-            
-                if (check.Count() == 4)
+
+            if (check.Count() == 4)
+            {
+
+                Save(check);
+                lblQuestion.Text = "";
+
+                for (int n = 0; n <= 3; n++)
                 {
-                    Save(check);
-
-                    lblQuestion.Text = "";
-
-                    for (int i = 0; i <= 3; i++)
-                    {
-                        lblQuestion.Text += question[i].ToString();
-                    }
+                    lblQuestion.Text += question[n].ToString();
                 }
-            
-
+            }
         }
     }
 }
