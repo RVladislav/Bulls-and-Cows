@@ -11,8 +11,6 @@ $RECYCLE.BIN/
 #Directories
 bin
 obj
-.vs
-vs
 
 # Windows Installer files
 *.cab
@@ -52,3 +50,4 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.suo
+.vs/Bulls-and-Cows/v15/.suo
