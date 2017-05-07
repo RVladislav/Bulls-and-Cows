@@ -10,6 +10,7 @@ $RECYCLE.BIN/
 
 #Directories
 bin
+.vs
 
 # Windows Installer files
 *.cab
