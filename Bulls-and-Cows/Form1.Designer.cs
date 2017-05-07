@@ -38,15 +38,17 @@
             // 
             // txtCheck
             // 
-            this.txtCheck.Location = new System.Drawing.Point(12, 155);
+            this.txtCheck.Location = new System.Drawing.Point(12, 230);
+            this.txtCheck.MaxLength = 4;
             this.txtCheck.Name = "txtCheck";
             this.txtCheck.Size = new System.Drawing.Size(100, 20);
             this.txtCheck.TabIndex = 0;
             this.txtCheck.TextChanged += new System.EventHandler(this.txtCheck_TextChanged);
+            this.txtCheck.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCheck_KeyUp);
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(118, 152);
+            this.btnCheck.Location = new System.Drawing.Point(118, 227);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(75, 23);
             this.btnCheck.TabIndex = 1;
@@ -56,7 +58,7 @@
             // 
             // btnNewGame
             // 
-            this.btnNewGame.Location = new System.Drawing.Point(12, 194);
+            this.btnNewGame.Location = new System.Drawing.Point(12, 269);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(181, 23);
             this.btnNewGame.TabIndex = 3;
@@ -67,7 +69,7 @@
             // lblAnswer
             // 
             this.lblAnswer.AutoSize = true;
-            this.lblAnswer.Location = new System.Drawing.Point(12, 269);
+            this.lblAnswer.Location = new System.Drawing.Point(12, 344);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(35, 13);
             this.lblAnswer.TabIndex = 4;
@@ -76,17 +78,19 @@
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Location = new System.Drawing.Point(162, 269);
+            this.lblQuestion.Location = new System.Drawing.Point(162, 344);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(35, 13);
+            this.lblQuestion.Size = new System.Drawing.Size(31, 13);
             this.lblQuestion.TabIndex = 5;
-            this.lblQuestion.Text = "label1";
+            this.lblQuestion.Text = "0000";
             // 
             // txtTry
             // 
+            this.txtTry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTry.Location = new System.Drawing.Point(12, 9);
             this.txtTry.Name = "txtTry";
-            this.txtTry.Size = new System.Drawing.Size(181, 137);
+            this.txtTry.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.txtTry.Size = new System.Drawing.Size(181, 201);
             this.txtTry.TabIndex = 6;
             this.txtTry.Text = "";
             // 
@@ -94,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(212, 323);
+            this.ClientSize = new System.Drawing.Size(212, 367);
             this.Controls.Add(this.txtTry);
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.lblAnswer);

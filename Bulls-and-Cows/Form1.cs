@@ -13,10 +13,13 @@ namespace Bulls_and_Cows
     public partial class frmMain : Form
     {
         int[] answer, question;
+        int attempt = 15;
 
         public frmMain()
         {
             InitializeComponent();
+
+            txtCheck.Focus();
         }
 
         private void Generate()
@@ -26,13 +29,29 @@ namespace Bulls_and_Cows
 
             Random r = new Random();
 
-            for(int i=0; i<=3;i++)
+            for (int i = 0; i <= 3; i++)
             {
                 answer[i] = r.Next(0, 9);
-            }        
+            }
 
             Show();
 
+        }
+
+        private void Clear()
+        {
+            txtCheck.Clear();
+            txtTry.Clear();
+            lblAnswer.Text = "";
+            lblQuestion.Text = "";
+
+            for (int i = 0; i <= 3; i++)
+            {
+                question[i] = 0;
+                answer[i] = 0;
+            }
+
+            attempt = 15;
         }
 
         private void Show()
@@ -55,78 +74,102 @@ namespace Bulls_and_Cows
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Generate();            
+            Generate();
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
         {
-            txtCheck.Clear();
-            txtTry.Clear();
-            lblAnswer.Text = "";
-            lblQuestion.Text = "";
-
-            for (int i = 0; i <= 3; i++)
-            {
-                question[i] = 0;
-            }
+            Clear();
 
             Generate();
+
+            txtCheck.Focus();
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            string check = txtCheck.Text;
-            if (check.Count() == 4)
+            if (attempt == 0)
             {
-                int bulls = 0;
-                int cows = 0;
+                string s = "Ты проиграл! Загаданное число: " + answer[0].ToString() + answer[1].ToString() + answer[2].ToString() + answer[3].ToString();
+                MessageBox.Show(s);
+                btnNewGame_Click(sender, e);
 
-                for (int i = 0; i <= 3; i++)
+            }
+            else
+            {
+
+                string check = txtCheck.Text;
+
+                if (check.Count() == 4)
                 {
-                    for (int j = 0; j <= 3; j++)
+                    int bulls = 0;
+                    int cows = 0;
+
+                    for (int i = 0; i <= 3; i++)
                     {
-                        if (answer[i] == question[j])
+                        for (int j = 0; j <= 3; j++)
                         {
-                            if (i == j)
+                            if (answer[i] == question[j])
                             {
-                                bulls++;
-                            }
-                            else
-                            {
-                                cows++;
+                                if (i == j)
+                                {
+                                    bulls++;
+                                }
+                                else
+                                {
+                                    cows++;
+                                }
                             }
                         }
                     }
+
+                    if (bulls == 4)
+                    {
+                        string s = "Ты победил! Загаданное число: " + answer[0].ToString() + answer[1].ToString() + answer[2].ToString() + answer[3].ToString();
+                        MessageBox.Show(s);
+
+                        Clear();
+
+                        Generate();
+                    }
+                    else
+                    {
+                        txtTry.Text += attempt.ToString() + "  Быков: " + bulls.ToString() + " Коров: " + cows.ToString() + "\n";
+
+                        attempt--;
+                    }                    
+
+                    txtCheck.Clear();
                 }
 
-                if (bulls == 4)
-                {
-                    string s = "Ты победил! Загаданное число: " + answer[0].ToString() + answer[1].ToString() + answer[2].ToString() + answer[3].ToString();
-                    MessageBox.Show(s);
-                    btnNewGame_Click(sender, e);
-                }
-                else
-                {
-                    txtTry.Text += "Быков: " + bulls.ToString() + "Коров: " + cows.ToString() + "\n";
-                }
+            }
+        }
+
+        private void txtCheck_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnCheck_Click(sender, e);
             }
         }
 
         private void txtCheck_TextChanged(object sender, EventArgs e)
         {
             string check = txtCheck.Text;
-
-            if(check.Count() == 4)
-            {
-                Save(check);
-
-                lblQuestion.Text = "";
-
-                for (int i = 0; i <= 3; i++)
+            
+                if (check.Count() == 4)
                 {
-                    lblQuestion.Text += question[i].ToString();
+                    Save(check);
+
+                    lblQuestion.Text = "";
+
+                    for (int i = 0; i <= 3; i++)
+                    {
+                        lblQuestion.Text += question[i].ToString();
+                    }
                 }
-            }
+            
+
         }
     }
 }
